@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <title>BBM-GO Travel — Dream Getaways</title>
+
+  <!-- Tailwind CDN (small and simple for MVP) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    /* Carousel track */
+    .carousel-track { display:flex; transition: transform 0.8s ease; }
+    .carousel-item { min-width:100%; flex-shrink:0; }
+    /* simple fade for accessibility fallback */
+    .fade { transition: opacity .6s ease; }
+    /* Gallery tile hover */
+    .tile-hover:hover { transform: translateY(-6px) scale(1.01); }
+  </style>
+</head>
+<body class="font-sans antialiased bg-gray-50 text-gray-900">
+
+  <!-- NAV -->
+  <header class="sticky top-0 bg-white/60 backdrop-blur z-40">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="font-bold text-xl text-yellow-600">BBM-GO</a>
+      <nav class="space-x-6 hidden md:flex items-center">
+        <a href="#packages" class="hover:text-yellow-600">Packages</a>
+        <a href="#why" class="hover:text-yellow-600">Why BBM-GO</a>
+        <a href="#form" class="hover:text-yellow-600">Enquire</a>
+        <a href="gallery.html" class="hover:text-yellow-600">Gallery</a>
+      </nav>
+      <div class="md:hidden">
+        <button id="navToggle" aria-label="Open menu" class="p-2">☰</button>
+      </div>
+    </div>
+    <!-- mobile nav -->
+    <div id="mobileNav" class="hidden bg-white border-t">
+      <div class="px-4 py-3 flex flex-col space-y-2">
+        <a href="#packages">Packages</a>
+        <a href="#why">Why BBM-GO</a>
+        <a href="#form">Enquire</a>
+        <a href="gallery.html">Gallery</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO (carousel background) -->
+  <main>
+    <section class="relative h-[70vh] md:h-screen overflow-hidden">
+      <div class="absolute inset-0">
+        <div class="carousel-track h-full">
+          <div class="carousel-item bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80')"></div>
+          <div class="carousel-item bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c0?auto=format&fit=crop&w=1600&q=80')"></div>
+          <div class="carousel-item bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80')"></div>
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-b from-black/50 to-black/30"></div>
+      </div>
+
+      <div class="relative z-10 max-w-4xl mx-auto px-6 h-full flex flex-col justify-center items-center text-center text-white">
+        <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">Hey there! Welcome to <span class="text-yellow-400">BBM-GO</span></h1>
+        <p class="mt-4 text-lg md:text-xl max-w-2xl">We’re excited to help you plan your dream holiday getaway — Clarens Getaway, Bloem Heritage, Imvelo Safari & more.</p>
+        <div class="mt-6 flex gap-4">
+          <a href="packages.html" class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-full font-semibold shadow hover:bg-yellow-300">Our Packages</a>
+          <a href="#form" class="border border-white/40 px-5 py-3 rounded-full hover:bg-white/10">Start Planning</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PACKAGES CAROUSEL SECTION (cards with 2s auto slide) -->
+    <section id="packages" class="py-16">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-8">Our Special Packages</h2>
+
+        <div class="mx-auto max-w-4xl overflow-hidden rounded-2xl shadow-lg">
+          <div id="carouselTrack" class="carousel-track">
+            <!-- Card 1 -->
+            <article class="carousel-item bg-white p-6 md:p-8 flex flex-col md:flex-row gap-6 items-center">
+              <img src="item1.jpg" alt="Clarens" class="w-full md:w-1/2 h-56 md:h-44 object-cover rounded-lg">
+              <div class="md:flex-1 text-left">
+                <h3 class="text-2xl font-bold mb-2">Clarens Getaway</h3>
+                <p class="text-gray-600 mb-4">A mountain escape filled with art, nature, and charm — perfect for couples and small groups.</p>
+                <div class="flex gap-3">
+                  <a href="#form" class="bg-yellow-400 px-4 py-2 rounded-full font-semibold hover:bg-yellow-300">Enquire Now</a>
+                  <a href="gallery.html" class="px-4 py-2 border rounded-full hover:bg-gray-50">Gallery</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="carousel-item bg-white p-6 md:p-8 flex flex-col md:flex-row gap-6 items-center">
+              <img src="item2.jpg" alt="Bloem" class="w-full md:w-1/2 h-56 md:h-44 object-cover rounded-lg">
+              <div class="md:flex-1 text-left">
+                <h3 class="text-2xl font-bold mb-2">Bloem Heritage Package</h3>
+                <p class="text-gray-600 mb-4">Discover culture, history, and culinary delights — an ideal heritage experience.</p>
+                <div class="flex gap-3">
+                  <a href="#form" class="bg-yellow-400 px-4 py-2 rounded-full font-semibold hover:bg-yellow-300">Enquire Now</a>
+                  <a href="gallery.html" class="px-4 py-2 border rounded-full hover:bg-gray-50">Gallery</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="carousel-item bg-white p-6 md:p-8 flex flex-col md:flex-row gap-6 items-center">
+              <img src="item3.jpg" alt="Safari" class="w-full md:w-1/2 h-56 md:h-44 object-cover rounded-lg">
+              <div class="md:flex-1 text-left">
+                <h3 class="text-2xl font-bold mb-2">Imvelo Safari & Adventure</h3>
+                <p class="text-gray-600 mb-4">Explore South Africa’s wild side with guided safari and curated adventurous activities.</p>
+                <div class="flex gap-3">
+                  <a href="#form" class="bg-yellow-400 px-4 py-2 rounded-full font-semibold hover:bg-yellow-300">Enquire Now</a>
+                  <a href="gallery.html" class="px-4 py-2 border rounded-full hover:bg-gray-50">Gallery</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section id="why" class="py-12 bg-white">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-8">Why Choose BBM-GO</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="p-6 border rounded-xl text-center">Personalized itineraries</div>
+          <div class="p-6 border rounded-xl text-center">Group & corporate packages</div>
+          <div class="p-6 border rounded-xl text-center">Seamless coordination</div>
+          <div class="p-6 border rounded-xl text-center">Authentic local experiences</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ENQUIRY FORM -->
+    <section id="form" class="py-16 bg-gray-50">
+      <div class="max-w-3xl mx-auto px-4">
+        <h2 class="text-2xl font-bold mb-4 text-center">Start Your Journey</h2>
+        <p class="text-center text-gray-600 mb-6">Tell us the basics and we’ll craft a tailor-made itinerary and quote.</p>
+
+        <form action="https://formsubmit.co/info@bbmgo.co.za" method="POST" class="bg-white p-6 rounded-2xl shadow space-y-4">
+          <input type="hidden" name="_subject" value="New BBM-GO Booking Request">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="https://bbmgo.co.za/thank-you.html">
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <input name="Full_Names" required placeholder="Full names" class="w-full px-3 py-2 border rounded" />
+            <input name="Preferred_Dates" required placeholder="Preferred dates (eg: 01-05 Aug 2025)" class="w-full px-3 py-2 border rounded" />
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <input name="Travel_Group" required placeholder="Number of adults & kids" class="w-full px-3 py-2 border rounded" />
+            <input name="Destination" required placeholder="Destination of choice" class="w-full px-3 py-2 border rounded" />
+          </div>
+
+          <textarea name="Special_Requests" rows="3" placeholder="Special requests (optional)" class="w-full px-3 py-2 border rounded"></textarea>
+
+          <button type="submit" class="w-full bg-yellow-400 text-gray-900 font-semibold py-2 rounded hover:bg-yellow-300">Submit Inquiry</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- SMALL CTA -->
+    <section class="py-8 bg-yellow-50">
+      <div class="max-w-6xl mx-auto px-4 text-center">
+        <p class="font-medium">Prefer a quick chat? <a href="https://wa.me/27764866146" class="text-yellow-600 font-bold">Message us on WhatsApp</a></p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- WHATSAPP FLOATING BUTTON -->
+<a href="https://wa.me/27782870120" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"
+   class="fixed right-6 bottom-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white p-4 rounded-full shadow-lg flex items-center justify-center text-xl">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 text-gray-300 py-6 mt-12">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <p>© <span id="year"></span> BBM-GO Travel. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile nav toggle
+    document.getElementById('navToggle').addEventListener('click', () => {
+      const m = document.getElementById('mobileNav');
+      m.classList.toggle('hidden');
+    });
+
+    // Carousel logic (auto 2s, pause on hover)
+    (function(){
+      const track = document.getElementById('carouselTrack');
+      const slides = Array.from(track.children);
+      let index = 0, interval = null;
+      function goTo(i) {
+        index = i % slides.length;
+        track.style.transform = `translateX(-${index * 100}%)`;
+      }
+      function start() { interval = setInterval(()=> goTo(index+1), 2000); }
+      function stop() { clearInterval(interval); interval = null; }
+
+      // start
+      start();
+      // pause on hover
+      track.addEventListener('mouseenter', stop);
+      track.addEventListener('mouseleave', start);
+      // ensure resize doesn't break layout
+      window.addEventListener('resize', () => goTo(index));
+    })();
+  </script>
+</body>
+</html>

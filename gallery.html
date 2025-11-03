@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BBM-GO Gallery</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    .grid-img { transition: transform .25s ease, box-shadow .25s ease; }
+    .grid-img:hover { transform: translateY(-6px) scale(1.02); box-shadow: 0 10px 30px rgba(0,0,0,.18); }
+    .lightbox { background: rgba(0,0,0,.85); }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+  <header class="bg-white shadow">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="index.html" class="font-bold text-xl text-yellow-600">BBM-GO</a>
+      <nav class="space-x-4">
+        <a href="index.html" class="hover:text-yellow-600">Home</a>
+        <a href="index.html#packages" class="hover:text-yellow-600">Packages</a>
+        <a href="index.html#form" class="hover:text-yellow-600">Enquire</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 py-12">
+    <h1 class="text-3xl font-bold mb-6 text-center">Gallery — Our Journeys</h1>
+    <p class="text-center text-gray-600 mb-8">A selection of destinations, moments, and groups we've traveled with.</p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <!-- Replace these src values with your real photos -->
+      <img src="item8.jpg"
+           alt="Clarens landscape" class="w-full h-56 object-cover rounded-lg grid-img cursor-pointer" data-full="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=2000&q=80">
+
+      <img src="item9.jpg"
+           alt="Bloem heritage" class="w-full h-56 object-cover rounded-lg grid-img cursor-pointer" data-full="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=2000&q=80">
+
+      <img src="item10.jpg"
+           alt="Safari" class="w-full h-56 object-cover rounded-lg grid-img cursor-pointer" data-full="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2000&q=80">
+
+      <img src="item11.jpg"
+           alt="Coastal" class="w-full h-56 object-cover rounded-lg grid-img cursor-pointer" data-full="https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?auto=format&fit=crop&w=2000&q=80">
+
+      <img src="item12.jpg"
+           alt="Local food" class="w-full h-56 object-cover rounded-lg grid-img cursor-pointer" data-full="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=2000&q=80">
+
+      <img src="item13.jpg"
+           alt="Group shot" class="w-full h-56 object-cover rounded-lg grid-img cursor-pointer" data-full="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=2000&q=80">
+    </div>
+  </main>
+
+  <!-- Lightbox modal -->
+  <div id="lightbox" class="fixed inset-0 hidden items-center justify-center lightbox z-50">
+    <button id="lbClose" class="absolute top-6 right-6 text-white text-3xl z-60">✕</button>
+    <img id="lbImg" src="" alt="Preview" class="max-w-[90%] max-h-[85%] rounded-lg shadow-lg">
+  </div>
+
+  <!-- WhatsApp quick link -->
+  <a href="https://wa.me/27782870120" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"
+   class="fixed right-6 bottom-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white p-4 rounded-full shadow-lg flex items-center justify-center text-xl">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+  <script>
+    // Lightbox
+    const tiles = document.querySelectorAll('.grid-img');
+    const lightbox = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lbImg');
+    const lbClose = document.getElementById('lbClose');
+
+    tiles.forEach(t => {
+      t.addEventListener('click', () => {
+        lbImg.src = t.dataset.full || t.src;
+        lightbox.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function closeLB() {
+      lightbox.classList.add('hidden');
+      lbImg.src = '';
+      document.body.style.overflow = '';
+    }
+
+    lbClose.addEventListener('click', closeLB);
+    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLB(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLB(); });
+  </script>
+</body>
+</html>
