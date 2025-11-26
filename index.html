@@ -1,221 +1,217 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-  <title>BBM-GO Travel — Dream Getaways</title>
-
-  <!-- Tailwind CDN (small and simple for MVP) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <style>
-    html { scroll-behavior: smooth; }
-    /* Carousel track */
-    .carousel-track { display:flex; transition: transform 0.8s ease; }
-    .carousel-item { min-width:100%; flex-shrink:0; }
-    /* simple fade for accessibility fallback */
-    .fade { transition: opacity .6s ease; }
-    /* Gallery tile hover */
-    .tile-hover:hover { transform: translateY(-6px) scale(1.01); }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BBM-GO | Explore The World</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'bbm-primary': '#ff7900', // Bright Orange (Accent, Buttons)
+                        'bbm-secondary': '#2E8D87', // Teal (Contrast, Headers)
+                        'bbm-background': '#F2E0C8', // Cream (Background)
+                        'bbm-text': '#0A1933', // Deep Navy for contrast on light background
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'], 
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background-image: url('placeholder-hero-image.jpg'); /* Replace with one of the 5 images you provide */
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
 </head>
-<body class="font-sans antialiased bg-gray-50 text-gray-900">
+<body class="bg-bbm-background text-bbm-text font-sans antialiased">
 
-  <!-- NAV -->
-  <header class="sticky top-0 bg-white/60 backdrop-blur z-40">
-    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-      <a href="index.html" class="font-bold text-xl text-yellow-600">BBM-GO</a>
-      <nav class="space-x-6 hidden md:flex items-center">
-        <a href="#packages" class="hover:text-yellow-600">Packages</a>
-        <a href="#why" class="hover:text-yellow-600">Why BBM-GO</a>
-        <a href="#form" class="hover:text-yellow-600">Enquire</a>
-        <a href="gallery.html" class="hover:text-yellow-600">Gallery</a>
-      </nav>
-      <div class="md:hidden">
-        <button id="navToggle" aria-label="Open menu" class="p-2">☰</button>
-      </div>
-    </div>
-    <!-- mobile nav -->
-    <div id="mobileNav" class="hidden bg-white border-t">
-      <div class="px-4 py-3 flex flex-col space-y-2">
-        <a href="#packages">Packages</a>
-        <a href="#why">Why BBM-GO</a>
-        <a href="#form">Enquire</a>
-        <a href="gallery.html">Gallery</a>
-      </div>
-    </div>
-  </header>
-
-  <!-- HERO (carousel background) -->
-  <main>
-    <section class="relative h-[70vh] md:h-screen overflow-hidden">
-      <div class="absolute inset-0">
-        <div class="carousel-track h-full">
-          <div class="carousel-item bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80')"></div>
-          <div class="carousel-item bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c0?auto=format&fit=crop&w=1600&q=80')"></div>
-          <div class="carousel-item bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80')"></div>
+    <nav class="sticky top-0 z-50 bg-bbm-secondary shadow-lg">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-extrabold text-bbm-background tracking-tight">
+                BBM<span class="text-bbm-primary">-GO</span>
+            </a>
+            <div class="space-x-8 hidden md:flex text-lg font-semibold">
+                <a href="index.html" class="text-bbm-background hover:text-bbm-primary transition-colors">Home</a>
+                <a href="about.html" class="text-bbm-background hover:text-bbm-primary transition-colors">About</a>
+                <a href="#packages" class="text-bbm-background hover:text-bbm-primary transition-colors">Packages</a>
+                <a href="about.html#contact" class="text-bbm-background hover:text-bbm-primary transition-colors">Contact</a>
+            </div>
+            <button class="md:hidden text-bbm-background p-2">
+                <i data-feather="menu" class="w-6 h-6"></i>
+            </button>
         </div>
-        <div class="absolute inset-0 bg-gradient-to-b from-black/50 to-black/30"></div>
-      </div>
-
-      <div class="relative z-10 max-w-4xl mx-auto px-6 h-full flex flex-col justify-center items-center text-center text-white">
-        <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">Hey there! Welcome to <span class="text-yellow-400">BBM-GO</span></h1>
-        <p class="mt-4 text-lg md:text-xl max-w-2xl">We’re excited to help you plan your dream holiday getaway — Clarens Getaway, Bloem Heritage, Imvelo Safari & more.</p>
-        <div class="mt-6 flex gap-4">
-          <a href="packages.html" class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-full font-semibold shadow hover:bg-yellow-300">Our Packages</a>
-          <a href="#form" class="border border-white/40 px-5 py-3 rounded-full hover:bg-white/10">Start Planning</a>
+    </nav>
+    
+    <header class="hero-bg h-[70vh] flex items-center justify-center relative">
+         
+        <div class="absolute inset-0 bg-bbm-secondary opacity-50"></div>
+        <div class="relative text-center p-6">
+            <h1 class="text-6xl md:text-8xl font-black text-bbm-background mb-8 leading-tight tracking-wider" style="text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);">
+                EXPLORE THE WORLD <br>WITH <span class="text-bbm-primary">BBM-GO</span>
+            </h1>
+            
+            <form class="max-w-4xl mx-auto flex flex-col md:flex-row gap-3 bg-bbm-background/90 p-6 rounded-xl shadow-2xl">
+                <input type="text" placeholder="Where do you want to go? (e.g., Clarens, Gariep)" 
+                       class="flex-grow p-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-bbm-primary text-lg">
+                <input type="date" value="2025-12-01"
+                       class="p-4 border-2 border-gray-300 rounded-lg text-lg">
+                <button type="submit" class="bg-bbm-primary hover:bg-bbm-secondary text-bbm-background font-bold py-4 px-8 rounded-lg uppercase text-lg transition-colors">
+                    Search
+                </button>
+            </form>
         </div>
-      </div>
-    </section>
+    </header>
 
-    <!-- PACKAGES CAROUSEL SECTION (cards with 2s auto slide) -->
-    <section id="packages" class="py-16">
-      <div class="max-w-6xl mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-8">Our Special Packages</h2>
+    <section id="packages" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-5xl font-extrabold text-center mb-16 text-bbm-secondary">✈️ Our Popular Free State Drops</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 
-        <div class="mx-auto max-w-4xl overflow-hidden rounded-2xl shadow-lg">
-          <div id="carouselTrack" class="carousel-track">
-            <!-- Card 1 -->
-            <article class="carousel-item bg-white p-6 md:p-8 flex flex-col md:flex-row gap-6 items-center">
-              <img src="item1.jpg" alt="Clarens" class="w-full md:w-1/2 h-56 md:h-44 object-cover rounded-lg">
-              <div class="md:flex-1 text-left">
-                <h3 class="text-2xl font-bold mb-2">Clarens Getaway</h3>
-                <p class="text-gray-600 mb-4">A mountain escape filled with art, nature, and charm — perfect for couples and small groups.</p>
-                <div class="flex gap-3">
-                  <a href="#form" class="bg-yellow-400 px-4 py-2 rounded-full font-semibold hover:bg-yellow-300">Enquire Now</a>
-                  <a href="gallery.html" class="px-4 py-2 border rounded-full hover:bg-gray-50">Gallery</a>
+                <div class="bg-white rounded-xl shadow-xl overflow-hidden transform hover:scale-[1.03] transition-transform duration-300">
+                    <div class="h-48 bg-gray-200">
+                      <img src="item1.png" alt="Gariep Dam view with watersports" class="w-full h-full object-cover">
+
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-2xl font-bold text-bbm-secondary mb-2">Clarens (Jewel of the Free State)</h3>
+                        <p class="text-sm font-medium text-bbm-text/70 mb-4">Mountain adventures and artistic charm.</p>
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center bg-bbm-background p-3 rounded-lg">
+                                <span class="font-semibold text-bbm-text">Dec '25 - Jan '26</span>
+                                <span class="text-bbm-primary font-extrabold">from R3,700.00 pp</span>
+                            </div>
+                            <div class="flex justify-between items-center bg-bbm-background p-3 rounded-lg">
+                                <span class="font-semibold text-bbm-text">Mar '26 - Apr '26</span>
+                                <span class="text-bbm-primary font-extrabold">from R4,000.00 pp</span>
+                            </div>
+                        </div>
+                        <a href="about.html#packages" class="mt-4 block text-center bg-bbm-primary text-white py-2 rounded-lg hover:bg-bbm-secondary transition-colors font-medium">View Details</a>
+                    </div>
                 </div>
-              </div>
-            </article>
 
-            <!-- Card 2 -->
-            <article class="carousel-item bg-white p-6 md:p-8 flex flex-col md:flex-row gap-6 items-center">
-              <img src="item2.jpg" alt="Bloem" class="w-full md:w-1/2 h-56 md:h-44 object-cover rounded-lg">
-              <div class="md:flex-1 text-left">
-                <h3 class="text-2xl font-bold mb-2">Bloem Heritage Package</h3>
-                <p class="text-gray-600 mb-4">Discover culture, history, and culinary delights — an ideal heritage experience.</p>
-                <div class="flex gap-3">
-                  <a href="#form" class="bg-yellow-400 px-4 py-2 rounded-full font-semibold hover:bg-yellow-300">Enquire Now</a>
-                  <a href="gallery.html" class="px-4 py-2 border rounded-full hover:bg-gray-50">Gallery</a>
+                <div class="bg-white rounded-xl shadow-xl overflow-hidden transform hover:scale-[1.03] transition-transform duration-300">
+                  <div class="h-48 bg-gray-200">
+                      <img src="item11.jpg" alt="Gariep Dam view with watersports" class="w-full h-full object-cover">
+                  </div>
+                  <div class="p-5">
+                      <h3 class="text-2xl font-bold text-bbm-secondary mb-2">Gariep</h3>
+                      <p class="text-sm font-medium text-bbm-text/70 mb-4">Watersports and massive dam views.</p>
+                      <div class="space-y-3">
+                          <div class="flex justify-between items-center bg-bbm-background p-3 rounded-lg">
+                              <span class="font-semibold text-bbm-text">Dec '25 - Feb '26</span>
+                              <span class="text-bbm-primary font-extrabold">from R3,600.00 pp</span>
+                          </div>
+                          <div class="flex justify-between items-center bg-bbm-background p-3 rounded-lg">
+                              <span class="font-semibold text-bbm-text">Sep '26 - Oct '26</span>
+                              <span class="text-bbm-primary font-extrabold">from R4,200.00 pp</span>
+                          </div>
+                      </div>
+                      <a href="about.html#packages" class="mt-4 block text-center bg-bbm-primary text-white py-2 rounded-lg hover:bg-bbm-secondary transition-colors font-medium">View Details</a>
+                  </div>
+              </div>
+                
+                <div class="bg-white rounded-xl shadow-xl overflow-hidden transform hover:scale-[1.03] transition-transform duration-300">
+                    <div class="h-48 bg-gray-200">
+                      <img src="item10.jpg" alt="Gariep Dam view with watersports" class="w-full h-full object-cover">
+
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-2xl font-bold text-bbm-secondary mb-2">Parys</h3>
+                        <p class="text-sm font-medium text-bbm-text/70 mb-4">Vredefort Dome and Vaal River activities.</p>
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center bg-bbm-background p-3 rounded-lg">
+                                <span class="font-semibold text-bbm-text">Jan '26 - Feb '26</span>
+                                <span class="text-bbm-primary font-extrabold">from R3,550.00 pp</span>
+                            </div>
+                            <div class="flex justify-between items-center bg-bbm-background p-3 rounded-lg">
+                                <span class="font-semibold text-bbm-text">Oct '26 - Nov '26</span>
+                                <span class="text-bbm-primary font-extrabold">from R3,700.00 pp</span>
+                            </div>
+                        </div>
+                        <a href="about.html#packages" class="mt-4 block text-center bg-bbm-primary text-white py-2 rounded-lg hover:bg-bbm-secondary transition-colors font-medium">View Details</a>
+                    </div>
                 </div>
-              </div>
-            </article>
 
-            <!-- Card 3 -->
-            <article class="carousel-item bg-white p-6 md:p-8 flex flex-col md:flex-row gap-6 items-center">
-              <img src="item3.jpg" alt="Safari" class="w-full md:w-1/2 h-56 md:h-44 object-cover rounded-lg">
-              <div class="md:flex-1 text-left">
-                <h3 class="text-2xl font-bold mb-2">Imvelo Safari & Adventure</h3>
-                <p class="text-gray-600 mb-4">Explore South Africa’s wild side with guided safari and curated adventurous activities.</p>
-                <div class="flex gap-3">
-                  <a href="#form" class="bg-yellow-400 px-4 py-2 rounded-full font-semibold hover:bg-yellow-300">Enquire Now</a>
-                  <a href="gallery.html" class="px-4 py-2 border rounded-full hover:bg-gray-50">Gallery</a>
+                <div class="bg-white rounded-xl shadow-xl overflow-hidden transform hover:scale-[1.03] transition-transform duration-300">
+                    <div class="h-48 bg-gray-200">
+                      <img src="item8.jpg" alt="Gariep Dam view with watersports" class="w-full h-full object-cover">
+
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-2xl font-bold text-bbm-secondary mb-2">Bloemfontein (Imvelo Safari)</h3>
+                        <p class="text-sm font-medium text-bbm-text/70 mb-4">City charm mixed with safari escapes.</p>
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center bg-bbm-background p-3 rounded-lg">
+                                <span class="font-semibold text-bbm-text">Dec '26 - Feb '26</span>
+                                <span class="text-bbm-primary font-extrabold">from R1,550.00 pp</span>
+                            </div>
+                            <div class="flex justify-between items-center bg-bbm-background p-3 rounded-lg">
+                                <span class="font-semibold text-bbm-text">Sep '26 - Nov '26</span>
+                                <span class="text-bbm-primary font-extrabold">from R1,700.00 pp</span>
+                            </div>
+                        </div>
+                        <a href="about.html#packages" class="mt-4 block text-center bg-bbm-primary text-white py-2 rounded-lg hover:bg-bbm-secondary transition-colors font-medium">View Details</a>
+                    </div>
                 </div>
-              </div>
-            </article>
-          </div>
+
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="about.html#contact" class="inline-block bg-bbm-secondary hover:bg-bbm-primary text-white font-bold py-4 px-10 rounded-full text-lg uppercase transition-colors shadow-lg">
+                    Request a Customized Package
+                </a>
+            </div>
         </div>
-      </div>
     </section>
 
-    <!-- WHY CHOOSE US -->
-    <section id="why" class="py-12 bg-white">
-      <div class="max-w-6xl mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-8">Why Choose BBM-GO</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div class="p-6 border rounded-xl text-center">Personalized itineraries</div>
-          <div class="p-6 border rounded-xl text-center">Group & corporate packages</div>
-          <div class="p-6 border rounded-xl text-center">Seamless coordination</div>
-          <div class="p-6 border rounded-xl text-center">Authentic local experiences</div>
+    <footer class="bg-bbm-secondary text-bbm-background py-12">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <h3 class="text-2xl font-bold mb-4 text-bbm-primary">BBM-GO</h3>
+                <p class="text-sm">Your trusted partner in creating unforgettable travel experiences across South Africa and the World.</p>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="index.html" class="hover:text-bbm-primary">Home</a></li>
+                    <li><a href="about.html" class="hover:text-bbm-primary">About Us</a></li>
+                    <li><a href="#packages" class="hover:text-bbm-primary">Packages</a></li>
+                    <li><a href="about.html#faq" class="hover:text-bbm-primary">FAQs</a></li>
+                    <li><a href="about.html#contact" class="hover:text-bbm-primary">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Contact</h3>
+                <p class="text-sm">📞 078 287 0120</p>
+                <p class="text-sm">📧 admin@bbmholdings.co.za</p>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Follow Us</h3>
+                <div class="flex space-x-4">
+                    <a href="https://www.facebook.com/BBMabala?mibextid=ZbWKwL" target="_blank" class="hover:text-bbm-primary"><i data-feather="facebook" class="w-6 h-6"></i></a>
+                    <a href="https://www.instagram.com/bbm_go1?igsh=em1pbWt1YzJtcmlp" target="_blank" class="hover:text-bbm-primary"><i data-feather="instagram" class="w-6 h-6"></i></a>
+                    <a href="https://www.tiktok.com/@bbm_go?_t=8qL09XrDfUM&_r=1" target="_blank" class="hover:text-bbm-primary"><i data-feather="send" class="w-6 h-6"></i></a> <a href="https://wa.me/c/27782870120" target="_blank" class="hover:text-bbm-primary"><i data-feather="message-circle" class="w-6 h-6"></i></a>
+                </div>
+            </div>
         </div>
-      </div>
-    </section>
+        <div class="text-center text-sm mt-8 border-t border-bbm-background/20 pt-4">
+            &copy; 2025 BBM-GO. All rights reserved.
+        </div>
+    </footer>
 
-    <!-- ENQUIRY FORM -->
-    <section id="form" class="py-16 bg-gray-50">
-      <div class="max-w-3xl mx-auto px-4">
-        <h2 class="text-2xl font-bold mb-4 text-center">Start Your Journey</h2>
-        <p class="text-center text-gray-600 mb-6">Tell us the basics and we’ll craft a tailor-made itinerary and quote.</p>
-
-        <form action="https://formsubmit.co/info@bbmgo.co.za" method="POST" class="bg-white p-6 rounded-2xl shadow space-y-4">
-          <input type="hidden" name="_subject" value="New BBM-GO Booking Request">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_next" value="https://bbmgo.co.za/thank-you.html">
-
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-            <input name="Full_Names" required placeholder="Full names" class="w-full px-3 py-2 border rounded" />
-            <input name="Preferred_Dates" required placeholder="Preferred dates (eg: 01-05 Aug 2025)" class="w-full px-3 py-2 border rounded" />
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-            <input name="Travel_Group" required placeholder="Number of adults & kids" class="w-full px-3 py-2 border rounded" />
-            <input name="Destination" required placeholder="Destination of choice" class="w-full px-3 py-2 border rounded" />
-          </div>
-
-          <textarea name="Special_Requests" rows="3" placeholder="Special requests (optional)" class="w-full px-3 py-2 border rounded"></textarea>
-
-          <button type="submit" class="w-full bg-yellow-400 text-gray-900 font-semibold py-2 rounded hover:bg-yellow-300">Submit Inquiry</button>
-        </form>
-      </div>
-    </section>
-
-    <!-- SMALL CTA -->
-    <section class="py-8 bg-yellow-50">
-      <div class="max-w-6xl mx-auto px-4 text-center">
-        <p class="font-medium">Prefer a quick chat? <a href="https://wa.me/27764866146" class="text-yellow-600 font-bold">Message us on WhatsApp</a></p>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- WHATSAPP FLOATING BUTTON -->
-<a href="https://wa.me/27782870120" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"
-   class="fixed right-6 bottom-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white p-4 rounded-full shadow-lg flex items-center justify-center text-xl">
-    <i class="fab fa-whatsapp"></i>
-</a>
-
-
-  <!-- FOOTER -->
-  <footer class="bg-gray-900 text-gray-300 py-6 mt-12">
-    <div class="max-w-6xl mx-auto px-4 text-center">
-      <p>© <span id="year"></span> BBM-GO Travel. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <!-- SCRIPTS -->
-  <script>
-    // Year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Mobile nav toggle
-    document.getElementById('navToggle').addEventListener('click', () => {
-      const m = document.getElementById('mobileNav');
-      m.classList.toggle('hidden');
-    });
-
-    // Carousel logic (auto 2s, pause on hover)
-    (function(){
-      const track = document.getElementById('carouselTrack');
-      const slides = Array.from(track.children);
-      let index = 0, interval = null;
-      function goTo(i) {
-        index = i % slides.length;
-        track.style.transform = `translateX(-${index * 100}%)`;
-      }
-      function start() { interval = setInterval(()=> goTo(index+1), 2000); }
-      function stop() { clearInterval(interval); interval = null; }
-
-      // start
-      start();
-      // pause on hover
-      track.addEventListener('mouseenter', stop);
-      track.addEventListener('mouseleave', start);
-      // ensure resize doesn't break layout
-      window.addEventListener('resize', () => goTo(index));
-    })();
-  </script>
+    <script>
+        feather.replace();
+    </script>
 </body>
 </html>
