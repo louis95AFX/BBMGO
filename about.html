@@ -29,19 +29,28 @@
 <body class="bg-bbm-background text-bbm-text font-sans antialiased">
 
     <nav class="sticky top-0 z-50 bg-bbm-secondary shadow-lg">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-3xl font-extrabold text-bbm-background tracking-tight">
-                BBM<span class="text-bbm-primary">-GO</span>
-            </a>
-            <div class="space-x-8 hidden md:flex text-lg font-semibold">
-                <a href="index.html" class="text-bbm-background hover:text-bbm-primary transition-colors">Home</a>
-                <a href="about.html" class="text-bbm-background hover:text-bbm-primary transition-colors">About</a>
-                <a href="index.html#packages" class="text-bbm-background hover:text-bbm-primary transition-colors">Packages</a>
-                <a href="#contact" class="text-bbm-background hover:text-bbm-primary transition-colors">Contact</a>
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-3xl font-extrabold text-bbm-background tracking-tight">
+                    BBM<span class="text-bbm-primary">-GO</span>
+                </a>
+                <div class="space-x-8 hidden md:flex text-lg font-semibold">
+                    <a href="index.html" class="text-bbm-background hover:text-bbm-primary transition-colors">Home</a>
+                    <a href="about.html" class="text-bbm-background hover:text-bbm-primary transition-colors">About</a>
+                    <a href="index.html#packages" class="text-bbm-background hover:text-bbm-primary transition-colors">Packages</a>
+                    <a href="#contact" class="text-bbm-background hover:text-bbm-primary transition-colors">Contact</a>
+                </div>
+                <button id="menu-button" class="md:hidden text-bbm-background p-2 focus:outline-none">
+                    <i data-feather="menu" class="w-6 h-6"></i>
+                </button>
             </div>
-            <button class="md:hidden text-bbm-background p-2">
-                <i data-feather="menu" class="w-6 h-6"></i>
-            </button>
+            
+            <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-2 pb-2 text-center">
+                <a href="index.html" class="block text-bbm-background hover:bg-bbm-primary/20 hover:text-bbm-primary py-2 px-3 rounded text-lg font-semibold transition-colors">Home</a>
+                <a href="about.html" class="block text-bbm-background hover:bg-bbm-primary/20 hover:text-bbm-primary py-2 px-3 rounded text-lg font-semibold transition-colors">About</a>
+                <a href="index.html#packages" class="block text-bbm-background hover:bg-bbm-primary/20 hover:text-bbm-primary py-2 px-3 rounded text-lg font-semibold transition-colors">Packages</a>
+                <a href="#contact" class="block text-bbm-background hover:bg-bbm-primary/20 hover:text-bbm-primary py-2 px-3 rounded text-lg font-semibold transition-colors">Contact</a>
+            </div>
         </div>
     </nav>
 
@@ -205,10 +214,10 @@
                     </p>
                     
                     <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-8">
-                        
-                        
-                        
-                        </div>
+                        <div class="h-32 bg-gray-200 rounded-lg flex items-center justify-center text-sm text-gray-500">Campaign Image 1</div>
+                        <div class="h-32 bg-gray-200 rounded-lg flex items-center justify-center text-sm text-gray-500">Campaign Image 2</div>
+                        <div class="h-32 bg-gray-200 rounded-lg flex items-center justify-center text-sm text-gray-500">Campaign Image 3</div>
+                    </div>
                 </div>
             </section>
             
@@ -315,6 +324,26 @@
 
     <script>
         feather.replace();
+
+        // JAVASCRIPT FOR MOBILE MENU TOGGLE
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuButton = document.getElementById('menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            menuButton.addEventListener('click', () => {
+                // Toggles the 'hidden' class on the mobile menu container
+                mobileMenu.classList.toggle('hidden');
+                
+                // Optional: Change the icon from 'menu' to 'x' when open
+                const icon = menuButton.querySelector('i');
+                if (mobileMenu.classList.contains('hidden')) {
+                    icon.setAttribute('data-feather', 'menu');
+                } else {
+                    icon.setAttribute('data-feather', 'x');
+                }
+                feather.replace(); // Re-render the icon
+            });
+        });
     </script>
 </body>
 </html>

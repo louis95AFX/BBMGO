@@ -36,41 +36,52 @@
 <body class="bg-bbm-background text-bbm-text font-sans antialiased">
 
     <nav class="sticky top-0 z-50 bg-bbm-secondary shadow-lg">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-3xl font-extrabold text-bbm-background tracking-tight">
-                BBM<span class="text-bbm-primary">-GO</span>
-            </a>
-            <div class="space-x-8 hidden md:flex text-lg font-semibold">
-                <a href="index.html" class="text-bbm-background hover:text-bbm-primary transition-colors">Home</a>
-                <a href="about.html" class="text-bbm-background hover:text-bbm-primary transition-colors">About</a>
-                <a href="#packages" class="text-bbm-background hover:text-bbm-primary transition-colors">Packages</a>
-                <a href="about.html#contact" class="text-bbm-background hover:text-bbm-primary transition-colors">Contact</a>
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-3xl font-extrabold text-bbm-background tracking-tight">
+                    BBM<span class="text-bbm-primary">-GO</span>
+                </a>
+                
+                <div class="space-x-8 hidden md:flex text-lg font-semibold">
+                    <a href="index.html" class="text-bbm-background hover:text-bbm-primary transition-colors">Home</a>
+                    <a href="about.html" class="text-bbm-background hover:text-bbm-primary transition-colors">About</a>
+                    <a href="#packages" class="text-bbm-background hover:text-bbm-primary transition-colors">Packages</a>
+                    <a href="about.html#contact" class="text-bbm-background hover:text-bbm-primary transition-colors">Contact</a>
+                </div>
+                
+                <button id="menu-button" class="md:hidden text-bbm-background p-2 focus:outline-none">
+                    <i data-feather="menu" class="w-6 h-6"></i>
+                </button>
             </div>
-            <button class="md:hidden text-bbm-background p-2">
-                <i data-feather="menu" class="w-6 h-6"></i>
-            </button>
+            
+            <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-2 pb-2 text-center">
+                <a href="index.html" class="block text-bbm-background hover:bg-bbm-primary/20 hover:text-bbm-primary py-2 px-3 rounded text-lg font-semibold transition-colors">Home</a>
+                <a href="about.html" class="block text-bbm-background hover:bg-bbm-primary/20 hover:text-bbm-primary py-2 px-3 rounded text-lg font-semibold transition-colors">About</a>
+                <a href="#packages" class="block text-bbm-background hover:bg-bbm-primary/20 hover:text-bbm-primary py-2 px-3 rounded text-lg font-semibold transition-colors">Packages</a>
+                <a href="about.html#contact" class="block text-bbm-background hover:bg-bbm-primary/20 hover:text-bbm-primary py-2 px-3 rounded text-lg font-semibold transition-colors">Contact</a>
+            </div>
         </div>
     </nav>
     
-    <header class="hero-bg h-[70vh] flex items-center justify-center relative">
-         
-        <div class="absolute inset-0 bg-bbm-secondary opacity-50"></div>
-        <div class="relative text-center p-6">
-            <h1 class="text-6xl md:text-8xl font-black text-bbm-background mb-8 leading-tight tracking-wider" style="text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);">
-                EXPLORE THE WORLD <br>WITH <span class="text-bbm-primary">BBM-GO</span>
-            </h1>
-            
-            <form class="max-w-4xl mx-auto flex flex-col md:flex-row gap-3 bg-bbm-background/90 p-6 rounded-xl shadow-2xl">
-                <input type="text" placeholder="Where do you want to go? (e.g., Clarens, Gariep)" 
-                       class="flex-grow p-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-bbm-primary text-lg">
-                <input type="date" value="2025-12-01"
-                       class="p-4 border-2 border-gray-300 rounded-lg text-lg">
-                <button type="submit" class="bg-bbm-primary hover:bg-bbm-secondary text-bbm-background font-bold py-4 px-8 rounded-lg uppercase text-lg transition-colors">
-                    Search
-                </button>
-            </form>
-        </div>
-    </header>
+    <header class="hero-bg h-[90vh] flex items-center justify-center relative">
+     
+      <div class="absolute inset-0 bg-bbm-secondary opacity-60"></div>
+      <div class="relative text-center p-8">
+          <h1 class="text-6xl md:text-8xl font-black text-bbm-background mb-8 leading-tight tracking-wider" style="text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);">
+              EXPLORE THE WORLD <br>WITH <span class="text-bbm-primary">BBM-GO</span>
+          </h1>
+          
+          <form class="max-w-4xl mx-auto flex flex-col md:flex-row gap-3 bg-bbm-background p-6 rounded-xl shadow-2xl">
+              <input type="text" placeholder="Where do you want to go? (e.g., Clarens, Gariep)" 
+                     class="flex-grow p-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-bbm-primary text-lg">
+              <input type="date" value="2025-12-01"
+                     class="p-4 border-2 border-gray-300 rounded-lg text-lg">
+              <button type="submit" class="bg-bbm-primary hover:bg-bbm-secondary text-bbm-background font-bold py-4 px-8 rounded-lg uppercase text-lg transition-colors">
+                  Search
+              </button>
+          </form>
+      </div>
+  </header>
 
     <section id="packages" class="py-20">
         <div class="container mx-auto px-6">
@@ -80,7 +91,7 @@
 
                 <div class="bg-white rounded-xl shadow-xl overflow-hidden transform hover:scale-[1.03] transition-transform duration-300">
                     <div class="h-48 bg-gray-200">
-                      <img src="item1.png" alt="Gariep Dam view with watersports" class="w-full h-full object-cover">
+                      <img src="item1.png" alt="Clarens mountain view" class="w-full h-full object-cover">
 
                     </div>
                     <div class="p-5">
@@ -123,7 +134,7 @@
                 
                 <div class="bg-white rounded-xl shadow-xl overflow-hidden transform hover:scale-[1.03] transition-transform duration-300">
                     <div class="h-48 bg-gray-200">
-                      <img src="item10.jpg" alt="Gariep Dam view with watersports" class="w-full h-full object-cover">
+                      <img src="item10.jpg" alt="Parys Vredefort Dome" class="w-full h-full object-cover">
 
                     </div>
                     <div class="p-5">
@@ -145,7 +156,7 @@
 
                 <div class="bg-white rounded-xl shadow-xl overflow-hidden transform hover:scale-[1.03] transition-transform duration-300">
                     <div class="h-48 bg-gray-200">
-                      <img src="item8.jpg" alt="Gariep Dam view with watersports" class="w-full h-full object-cover">
+                      <img src="item8.jpg" alt="Bloemfontein Imvelo Safari Lodge" class="w-full h-full object-cover">
 
                     </div>
                     <div class="p-5">
@@ -212,6 +223,26 @@
 
     <script>
         feather.replace();
+
+        // JAVASCRIPT FOR MOBILE MENU TOGGLE
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuButton = document.getElementById('menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            menuButton.addEventListener('click', () => {
+                // Toggles the 'hidden' class on the mobile menu container
+                mobileMenu.classList.toggle('hidden');
+                
+                // Optional: Change the icon from 'menu' to 'x' when open
+                const icon = menuButton.querySelector('i');
+                if (mobileMenu.classList.contains('hidden')) {
+                    icon.setAttribute('data-feather', 'menu');
+                } else {
+                    icon.setAttribute('data-feather', 'x');
+                }
+                feather.replace(); // Re-render the icon
+            });
+        });
     </script>
 </body>
 </html>
