@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About BBM-GO | Services & iRover Club</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'bbm-primary': '#ff7900', // Bright Orange (Accent, Buttons)
+                        'bbm-secondary': '#2E8D87', // Teal (Contrast, Headers)
+                        'bbm-background': '#F2E0C8', // Cream (Background)
+                        'bbm-text': '#0A1933', // Deep Navy for contrast on light background
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'], 
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-bbm-background text-bbm-text font-sans antialiased">
+
+    <nav class="sticky top-0 z-50 bg-bbm-secondary shadow-lg">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-extrabold text-bbm-background tracking-tight">
+                BBM<span class="text-bbm-primary">-GO</span>
+            </a>
+            <div class="space-x-8 hidden md:flex text-lg font-semibold">
+                <a href="index.html" class="text-bbm-background hover:text-bbm-primary transition-colors">Home</a>
+                <a href="about.html" class="text-bbm-background hover:text-bbm-primary transition-colors">About</a>
+                <a href="index.html#packages" class="text-bbm-background hover:text-bbm-primary transition-colors">Packages</a>
+                <a href="#contact" class="text-bbm-background hover:text-bbm-primary transition-colors">Contact</a>
+            </div>
+            <button class="md:hidden text-bbm-background p-2">
+                <i data-feather="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+    </nav>
+
+    <main class="py-20">
+        <div class="container mx-auto px-6 space-y-20">
+
+            <section id="about-us">
+                <h2 class="text-5xl font-extrabold text-bbm-secondary text-center mb-12">Who We Are</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                    <div class="lg:col-span-2 bg-white p-8 rounded-xl shadow-lg">
+                        <h3 class="text-3xl font-bold text-bbm-primary mb-4">Our Mission</h3>
+                        <p class="text-lg leading-relaxed">
+                            Welcome to BBM-GO, your trusted partner in creating unforgettable travel experiences. Established in 2020, we've quickly grown into a competitive travel operator, offering premium yet affordable adventure trips tailored to meet the needs of all kinds of travellers—whether you're a couple or a large group. 
+                        </p>
+                        <p class="text-lg leading-relaxed mt-4">
+                            Our mission is simple: to exceed your expectations by delivering exceptional service, ensuring that every journey we plan is a success. Join us as we continue to make a positive impact in tourism while contributing to the growth of South Africa's vibrant economy.
+                        </p>
+                    </div>
+                    <div class="bg-bbm-secondary p-8 rounded-xl shadow-lg text-bbm-background">
+                        <h3 class="text-3xl font-bold text-bbm-primary mb-6">Why Choose Us?</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start space-x-3">
+                                <i data-feather="check-circle" class="w-6 h-6 text-bbm-primary flex-shrink-0 mt-1"></i>
+                                <span class="text-lg"><strong class="text-bbm-primary">Carefully Crafted Trips:</strong> Well-planned itineraries and entry to top sights.</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <i data-feather="credit-card" class="w-6 h-6 text-bbm-primary flex-shrink-0 mt-1"></i>
+                                <span class="text-lg"><strong class="text-bbm-primary">Flexible Payment Plans:</strong> Pay at your convenience with instalment options.</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <i data-feather="smile" class="w-6 h-6 text-bbm-primary flex-shrink-0 mt-1"></i>
+                                <span class="text-lg"><strong class="text-bbm-primary">Friendly Service:</strong> A welcoming and reliable travel partner.</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <i data-feather="map-pin" class="w-6 h-6 text-bbm-primary flex-shrink-0 mt-1"></i>
+                                <span class="text-lg"><strong class="text-bbm-primary">Personalized Hosts:</strong> Dedicated host to guide and enhance your journey.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="services" class="bg-white p-10 rounded-xl shadow-lg">
+                <h2 class="text-5xl font-extrabold text-bbm-secondary text-center mb-12">🔑 Key Services</h2>
+                <p class="text-xl text-center max-w-3xl mx-auto mb-10 text-bbm-text/80">
+                    We offer Comprehensive Travel Solutions for every need, from pre-arranged adventures to completely customized journeys.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="text-center p-6 border-2 border-bbm-secondary/30 rounded-lg hover:border-bbm-primary transition-colors">
+                        <i data-feather="package" class="w-10 h-10 text-bbm-primary mx-auto mb-3"></i>
+                        <h4 class="text-xl font-bold mb-2">Pre-Arranged Packages</h4>
+                        <p class="text-sm text-gray-600">Stress-free, all-inclusive trips to popular destinations.</p>
+                    </div>
+                    <div class="text-center p-6 border-2 border-bbm-secondary/30 rounded-lg hover:border-bbm-primary transition-colors">
+                        <i data-feather="edit" class="w-10 h-10 text-bbm-primary mx-auto mb-3"></i>
+                        <h4 class="text-xl font-bold mb-2">Customized Travel</h4>
+                        <p class="text-sm text-gray-600">Packages designed specifically according to your preferences.</p>
+                    </div>
+                    <div class="text-center p-6 border-2 border-bbm-secondary/30 rounded-lg hover:border-bbm-primary transition-colors">
+                        <i data-feather="check-square" class="w-10 h-10 text-bbm-primary mx-auto mb-3"></i>
+                        <h4 class="text-xl font-bold mb-2">Booking Services</h4>
+                        <p class="text-sm text-gray-600">Accommodation, transportation, flights, attractions, and activities.</p>
+                    </div>
+                    <div class="text-center p-6 border-2 border-bbm-secondary/30 rounded-lg hover:border-bbm-primary transition-colors">
+                        <i data-feather="users" class="w-10 h-10 text-bbm-primary mx-auto mb-3"></i>
+                        <h4 class="text-xl font-bold mb-2">Specialized Packages</h4>
+                        <p class="text-sm text-gray-600">Team Building, Camping, and School packages available on request.</p>
+                    </div>
+                </div>
+                <p class="text-center mt-10 italic text-bbm-secondary font-medium">
+                    We do take specialized bookings and we also do customized packages in accordance to the client’s preference and we also cater for destinations that are not on our popular destinations list… We do all this on request, contact us for more information.
+                </p>
+            </section>
+
+            <section id="savings" class="bg-bbm-secondary/10 p-10 rounded-xl shadow-lg">
+                <h2 class="text-5xl font-extrabold text-bbm-secondary text-center mb-12">💰 Smart Ways to Save with BBM-GO</h2>
+                <p class="text-xl text-center max-w-3xl mx-auto mb-10 text-bbm-text/80">
+                    We offer exclusive discounts to make your travels more affordable. Enjoy top-quality travel experiences at budget-friendly prices!
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md space-y-6">
+                        <h3 class="text-2xl font-bold text-bbm-primary border-b pb-2 mb-4">Payment & Loyalty Discounts</h3>
+                        
+                        <h4 class="font-bold text-lg text-bbm-secondary">Early Payment Discounts</h4>
+                        <ul class="space-y-2 list-disc pl-5">
+                            <li>7.5% Off: Full payment 4 months before departure.</li>
+                            <li>5% Off: Full payment 3 months before departure.</li>
+                            <li>3% Off: Full payment 2 months before departure.</li>
+                        </ul>
+
+                        <h4 class="font-bold text-lg text-bbm-secondary mt-6">iRover & Group Benefits</h4>
+                        <ul class="space-y-2 list-disc pl-5">
+                            <li>5% Off: Returning guests as a thank-you for your loyalty.</li>
+                            <li>5% Off: Groups of 15-16 people. (Tailored itineraries available for larger groups).</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-md space-y-6">
+                        <h3 class="text-2xl font-bold text-bbm-primary border-b pb-2 mb-4">Traveler Specific Benefits</h3>
+
+                        <h4 class="font-bold text-lg text-bbm-secondary">Young Travelers</h4>
+                        <p>Discounts for children aged 5-12 sharing a room with an adult.</p>
+
+                        <h4 class="font-bold text-lg text-bbm-secondary mt-6">Solo Travelers (Avoid Single Supplement)</h4>
+                        <p>Share a room with a same-gender guest to avoid single supplement fees. A single room is provided if no match is available.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="irover" class="bg-bbm-secondary text-bbm-background p-10 rounded-xl shadow-lg">
+                <h2 class="text-5xl font-extrabold text-bbm-primary text-center mb-12">🚀 Join The iRover Club</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div>
+                        <h3 class="text-3xl font-bold mb-4">Our Story</h3>
+                        <p class="text-lg leading-relaxed mb-8">
+                            Founded by travel enthusiasts, iRover connects like-minded individuals seeking unique experiences, cultural immersion, and lifelong connections through exploring the World and discovering Wanderlust Destinations.
+                        </p>
+                        
+                        <h3 class="text-3xl font-bold mb-4 text-bbm-primary">Why Join iRover?</h3>
+                        <ul class="space-y-3 list-disc pl-5 text-lg">
+                            <li>Expertly curated travel packages.</li>
+                            <li>Exclusive member-only discounts and promotions.</li>
+                            <li>Community networking & Personalized travel planning.</li>
+                            <li>Members-only events and workshops.</li>
+                        </ul>
+                        <p class="text-2xl font-black mt-6">
+                            Become an Explorist - a curious and adventurous traveller ready to immerse in breath-taking journeys.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-3xl font-bold mb-4">How to Join (5 Simple Steps)</h3>
+                        <div class="space-y-4 bg-bbm-background/20 p-6 rounded-lg">
+                            <ol class="space-y-3 list-decimal pl-5 text-lg">
+                                <li>Free to Join: Simply provide your personal details, contact info, and travel preferences.</li>
+                                <li>Choose Your Destination: Select from our list of exciting travel destinations.</li>
+                                <li>We Handle the Planning: From accommodation and transport to activities, we ensure a seamless experience.</li>
+                                <li>Start Saving: Begin with a deposit as low as R500, depending on your destination.</li>
+                                <li>Flexible Payment Plans: Pay off the balance in monthly instalments or upfront.</li>
+                            </ol>
+                            
+                            <a href="https://qr.me-qr.com/link-list/YVUuOPT5/show" target="_blank" class="block w-full text-center bg-bbm-primary hover:bg-bbm-background text-bbm-text font-black py-4 rounded-xl uppercase transition-colors mt-6 shadow-xl">
+                                One Click to Join iRover Now!
+                            </a>
+                            <p class="text-center italic text-sm mt-3">
+                                Get exclusive access to our News Letters and Project Campaigns!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="campaign" class="p-10 rounded-xl shadow-lg bg-white">
+                <h2 class="text-5xl font-extrabold text-bbm-secondary text-center mb-12">🤝 Revive Naval Hill Campaign</h2>
+                <div class="max-w-4xl mx-auto text-center">
+                    <p class="text-lg leading-relaxed mb-8">
+                        The Revive Naval Hill campaign is an initiative aimed at revitalizing and redeveloping Naval Hill in Bloemfontein, South Africa. This iconic landmark has immense historical, cultural, and environmental significance, offering breathtaking views of the city.
+                    </p>
+                    <p class="text-xl font-bold text-bbm-primary mb-8">
+                        We're proud to announce that our campaign on November 1, 2024, was a resounding success! We're excited to continue working towards revitalizing Naval Hill and making it a thriving hub for our community.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-8">
+                        
+                        
+                        
+                        </div>
+                </div>
+            </section>
+            
+            <section id="testimonials-faq" class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                
+                <div class="bg-bbm-background/50 p-8 rounded-xl shadow-lg">
+                    <h2 class="text-3xl font-extrabold text-bbm-secondary mb-8">💬 Client Testimonials</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="p-4 bg-white rounded-lg shadow-md border-l-4 border-bbm-primary">
+                            <div class="flex items-center mb-2">
+                                <i data-feather="user" class="w-10 h-10 rounded-full bg-gray-200 mr-4"></i>
+                                <div>
+                                    <p class="font-bold text-bbm-text">Nomusa K.</p>
+                                    <p class="text-sm text-gray-500">Trip: Clarens, Dec '25</p>
+                                </div>
+                            </div>
+                            <p class="italic text-gray-700">"BBM-GO made the trip seamless! The payment plan was so helpful, and the itinerary was perfect."</p>
+                        </div>
+                        <div class="text-center p-4 border border-bbm-primary rounded-lg hover:bg-bbm-primary/10 transition-colors">
+                            <a href="#" target="_blank" class="text-bbm-primary font-bold inline-flex items-center">
+                                <i data-feather="external-link" class="w-5 h-5 mr-2"></i>
+                                View/Add Your Review on Google Reviews
+                            </a>
+                        </div>
+                        
+                        <h3 class="text-xl font-bold text-bbm-secondary mt-8">Share Your Experience</h3>
+                        <form class="space-y-4">
+                            <input type="text" placeholder="Your Name" class="w-full p-3 border rounded-lg focus:border-bbm-primary">
+                            <textarea placeholder="Your Review..." rows="4" class="w-full p-3 border rounded-lg focus:border-bbm-primary"></textarea>
+                            <button type="submit" class="bg-bbm-primary text-white font-bold py-3 px-6 rounded-lg hover:bg-bbm-secondary transition-colors">
+                                Submit Review
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <div id="faq" class="bg-white p-8 rounded-xl shadow-lg">
+                    <h2 class="text-3xl font-extrabold text-bbm-secondary mb-8">❓ Frequently Asked Questions (FAQs)</h2>
+                    <div class="space-y-6">
+                        
+                        <div class="border-b pb-4">
+                            <h3 class="text-xl font-bold text-bbm-text mb-2">Can I join a Guided Holiday Tour alone?</h3>
+                            <p class="text-gray-700">
+                            Yes! You can travel solo, with friends, or in groups. We’ve welcomed many solo travellers in the past.
+                            </p>
+                        </div>
+
+                        <div class="border-b pb-4">
+                            <h3 class="text-xl font-bold text-bbm-text mb-2">Who can join a Guided Holiday Tour?</h3>
+                            <p class="text-gray-700">
+                                Anyone 18 and over is welcome. Those under 18 will need parental consent.
+                            </p>
+                        </div>
+
+                        <div class="pb-4">
+                            <h3 class="text-xl font-bold text-bbm-text mb-2">What are the payment plan options?</h3>
+                            <p class="text-gray-700">
+                                Pay a non-refundable deposit to secure your spot, and settle the balance in monthly instalments. Full payments are also accepted. Check out our "Smart Ways to Save" section for discount options. Join a trip today and make the most of our flexible payment plans!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="bg-bbm-secondary text-bbm-background py-12" id="contact">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <h3 class="text-2xl font-bold mb-4 text-bbm-primary">BBM-GO</h3>
+                <p class="text-sm">Your trusted partner in creating unforgettable travel experiences across South Africa and the World.</p>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="index.html" class="hover:text-bbm-primary">Home</a></li>
+                    <li><a href="about.html" class="hover:text-bbm-primary">About Us</a></li>
+                    <li><a href="index.html#packages" class="hover:text-bbm-primary">Packages</a></li>
+                    <li><a href="#faq" class="hover:text-bbm-primary">FAQs</a></li>
+                    <li><a href="#contact" class="hover:text-bbm-primary">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Contact Details</h3>
+                <p class="text-sm">📞 078 287 0120</p>
+                <p class="text-sm">📧 admin@bbmholdings.co.za</p>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Connect</h3>
+                <div class="flex space-x-4">
+                    <a href="https://www.facebook.com/BBMabala?mibextid=ZbWKwL" target="_blank" class="hover:text-bbm-primary"><i data-feather="facebook" class="w-6 h-6"></i></a>
+                    <a href="https://www.instagram.com/bbm_go1?igsh=em1pbWt1YzJtcmlp" target="_blank" class="hover:text-bbm-primary"><i data-feather="instagram" class="w-6 h-6"></i></a>
+                    <a href="https://www.tiktok.com/@bbm_go?_t=8qL09XrDfUM&_r=1" target="_blank" class="hover:text-bbm-primary"><i data-feather="send" class="w-6 h-6"></i></a>
+                    <a href="https://wa.me/c/27782870120" target="_blank" class="hover:text-bbm-primary"><i data-feather="message-circle" class="w-6 h-6"></i></a>
+                    <a href="https://whatsapp.com/channel/0029VaI7WmhHFxP9LigtCM0I" target="_blank" class="hover:text-bbm-primary"><i data-feather="hash" class="w-6 h-6"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center text-sm mt-8 border-t border-bbm-background/20 pt-4">
+            &copy; 2025 BBM-GO. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>
