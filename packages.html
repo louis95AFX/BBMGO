@@ -6,107 +6,156 @@
   <title>BBM-GO Packages</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 
   <style>
-    .tile-hover:hover { transform: translateY(-6px) scale(1.02); transition: 0.3s ease; }
+    .tile-hover:hover { 
+      transform: translateY(-6px) scale(1.02); 
+      transition: 0.3s ease; 
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Enhanced shadow */
+    }
+    .modal {
+        transition: opacity 0.3s ease-in-out;
+    }
+    .modal-content {
+        max-height: 80vh; /* Limit content height */
+    }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
 
-  <!-- HEADER -->
-  <header class="bg-white shadow">
+  <header class="bg-white shadow sticky top-0 z-50">
     <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-      <a href="index.html" class="font-bold text-xl text-yellow-600">BBM-GO</a>
-      <nav class="space-x-4">
-        <a href="index.html" class="hover:text-yellow-600">Home</a>
-        <a href="gallery.html" class="hover:text-yellow-600">Gallery</a>
-        <a href="index.html#form" class="hover:text-yellow-600">Enquire</a>
+      <a href="index.html" class="font-bold text-3xl text-yellow-600 tracking-wider">BBM-GO</a>
+      <nav class="space-x-6 text-lg font-medium hidden sm:block">
+        <a href="index.html" class="hover:text-yellow-600 transition-colors">Home</a>
+        <a href="gallery.html" class="hover:text-yellow-600 transition-colors">Gallery</a>
+        <a href="#packages" class="text-yellow-600">Packages</a>
+        <a href="index.html#form" class="hover:text-yellow-600 transition-colors">Enquire</a>
       </nav>
+       <button class="sm:hidden text-gray-700">
+        <i class="fas fa-bars"></i>
+      </button>
     </div>
   </header>
 
-  <!-- MAIN CONTENT -->
-  <main class="max-w-6xl mx-auto px-4 py-12">
-    <h1 class="text-3xl font-bold mb-8 text-center">Our Travel Packages</h1>
+  <main class="max-w-6xl mx-auto px-4 py-12" id="packages">
+    <h1 class="text-4xl font-extrabold mb-10 text-center text-gray-800">🌍 Our Exclusive Travel Packages</h1>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-      <!-- Package 1 -->
-      <article class="bg-white rounded-2xl shadow-lg overflow-hidden tile-hover">
+      <article class="bg-white rounded-2xl shadow-xl overflow-hidden tile-hover">
         <img src="item9.jpg"
              alt="Clarens Getaway" class="w-full h-56 object-cover">
         <div class="p-6">
-          <h3 class="text-xl font-bold mb-2">Clarens Getaway</h3>
+          <h3 class="text-2xl font-bold mb-2">Clarens Getaway</h3>
           <p class="text-gray-600 mb-4">A serene mountain escape, ideal for couples and small groups to explore art and nature.</p>
-          <a href="index.html#form" class="bg-yellow-400 text-gray-900 px-4 py-2 rounded-full font-semibold hover:bg-yellow-300">Enquire Now</a>
+          <button data-package-id="clarens" class="view-details-btn w-full bg-yellow-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-yellow-700 transition-colors">View Details</button>
         </div>
       </article>
 
-      <!-- Package 2 -->
-      <article class="bg-white rounded-2xl shadow-lg overflow-hidden tile-hover">
+      <article class="bg-white rounded-2xl shadow-xl overflow-hidden tile-hover">
         <img src="item8.jpg"
              alt="Bloem Heritage Package" class="w-full h-56 object-cover">
         <div class="p-6">
-          <h3 class="text-xl font-bold mb-2">Bloem Heritage Package</h3>
+          <h3 class="text-2xl font-bold mb-2">Bloem Heritage Package</h3>
           <p class="text-gray-600 mb-4">Discover culture, history, and culinary delights — an ideal heritage experience.</p>
-          <a href="index.html#form" class="bg-yellow-400 text-gray-900 px-4 py-2 rounded-full font-semibold hover:bg-yellow-300">Enquire Now</a>
+          <button data-package-id="bloem" class="view-details-btn w-full bg-yellow-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-yellow-700 transition-colors">View Details</button>
         </div>
       </article>
 
-      <!-- Package 3 -->
-      <article class="bg-white rounded-2xl shadow-lg overflow-hidden tile-hover">
+      <article class="bg-white rounded-2xl shadow-xl overflow-hidden tile-hover">
         <img src="item6.jpg"
              alt="Imvelo Safari & Adventure" class="w-full h-56 object-cover">
         <div class="p-6">
-          <h3 class="text-xl font-bold mb-2">Imvelo Safari & Adventure</h3>
+          <h3 class="text-2xl font-bold mb-2">Imvelo Safari & Adventure</h3>
           <p class="text-gray-600 mb-4">Explore South Africa’s wildlife with guided safari and curated adventurous activities.</p>
-          <a href="index.html#form" class="bg-yellow-400 text-gray-900 px-4 py-2 rounded-full font-semibold hover:bg-yellow-300">Enquire Now</a>
+          <button data-package-id="imvelo" class="view-details-btn w-full bg-yellow-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-yellow-700 transition-colors">View Details</button>
         </div>
       </article>
 
-      <!-- Package 4 -->
-      <article class="bg-white rounded-2xl shadow-lg overflow-hidden tile-hover">
+      <article class="bg-white rounded-2xl shadow-xl overflow-hidden tile-hover">
         <img src="item7.jpg"
              alt="Coastal Experience" class="w-full h-56 object-cover">
         <div class="p-6">
-          <h3 class="text-xl font-bold mb-2">Coastal Escape</h3>
+          <h3 class="text-2xl font-bold mb-2">Coastal Escape</h3>
           <p class="text-gray-600 mb-4">Relax by the ocean, enjoy seaside adventures, and experience local seafood delicacies.</p>
-          <a href="index.html#form" class="bg-yellow-400 text-gray-900 px-4 py-2 rounded-full font-semibold hover:bg-yellow-300">Enquire Now</a>
+          <button data-package-id="coastal" class="view-details-btn w-full bg-yellow-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-yellow-700 transition-colors">View Details</button>
         </div>
       </article>
 
-      <!-- Package 5 -->
-      <article class="bg-white rounded-2xl shadow-lg overflow-hidden tile-hover">
+      <article class="bg-white rounded-2xl shadow-xl overflow-hidden tile-hover">
         <img src="item5.jpg"
              alt="Adventure Trek" class="w-full h-56 object-cover">
         <div class="p-6">
-          <h3 class="text-xl font-bold mb-2">Adventure Trek</h3>
+          <h3 class="text-2xl font-bold mb-2">Adventure Trek</h3>
           <p class="text-gray-600 mb-4">Hike scenic trails, discover hidden gems, and challenge yourself in the wild landscapes.</p>
-          <a href="index.html#form" class="bg-yellow-400 text-gray-900 px-4 py-2 rounded-full font-semibold hover:bg-yellow-300">Enquire Now</a>
+          <button data-package-id="trek" class="view-details-btn w-full bg-yellow-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-yellow-700 transition-colors">View Details</button>
         </div>
       </article>
 
-      <!-- Package 6 -->
-      <article class="bg-white rounded-2xl shadow-lg overflow-hidden tile-hover">
+      <article class="bg-white rounded-2xl shadow-xl overflow-hidden tile-hover">
         <img src="item13.jpg"
              alt="Cultural Tour" class="w-full h-56 object-cover">
         <div class="p-6">
-          <h3 class="text-xl font-bold mb-2">Cultural Tour</h3>
+          <h3 class="text-2xl font-bold mb-2">Cultural Tour</h3>
           <p class="text-gray-600 mb-4">Immerse in local traditions, meet artisans, and experience authentic cultural activities.</p>
-          <a href="index.html#form" class="bg-yellow-400 text-gray-900 px-4 py-2 rounded-full font-semibold hover:bg-yellow-300">Enquire Now</a>
+          <button data-package-id="cultural" class="view-details-btn w-full bg-yellow-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-yellow-700 transition-colors">View Details</button>
         </div>
       </article>
 
     </div>
   </main>
 
-  <!-- WHATSAPP BUTTON -->
-  <a href="https://wa.me/27782870120" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"
+  <div id="package-modal" class="modal fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70 opacity-0 pointer-events-none">
+    
+    <div class="modal-content bg-white rounded-xl shadow-2xl w-full max-w-2xl m-4 overflow-y-auto transform scale-95 transition-transform duration-300">
+        
+        <div class="p-6 bg-gray-800 rounded-t-xl flex justify-between items-center sticky top-0 z-10">
+            <h3 id="modal-title" class="text-3xl font-extrabold text-white">Package Title</h3>
+            <button id="close-modal-btn" class="text-gray-400 hover:text-yellow-400 p-2 transition-colors">
+                <i data-feather="x" class="w-8 h-8"></i>
+            </button>
+        </div>
+        
+        <div class="p-6 space-y-6 text-gray-900">
+            
+            <div class="flex flex-col sm:flex-row justify-between items-center border-b pb-4">
+                <p class="text-xl font-bold mb-2 sm:mb-0">Price from: <span id="modal-price" class="text-yellow-600">R0.00 pp</span></p>
+                <p class="text-lg font-medium text-gray-600">Duration: <span id="modal-duration">3 Days / 2 Nights</span></p>
+            </div>
+
+            <div>
+                <h4 class="text-2xl font-semibold mb-3 text-gray-800 border-l-4 border-yellow-600 pl-3">Overview</h4>
+                <p id="modal-description" class="text-md leading-relaxed text-gray-700"></p>
+            </div>
+            
+            <div>
+                <h4 class="text-2xl font-semibold mb-3 text-gray-800 border-l-4 border-yellow-600 pl-3">What's Included</h4>
+                <ul id="modal-inclusions" class="list-none space-y-2 text-md">
+                    </ul>
+            </div>
+
+            <div>
+                <h4 class="text-2xl font-semibold mb-3 text-gray-800 border-l-4 border-yellow-600 pl-3">Not Included</h4>
+                <ul id="modal-exclusions" class="list-none space-y-2 text-md text-red-700">
+                    </ul>
+            </div>
+
+            <div class="pt-4 border-t text-center">
+                <a href="index.html#form" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-8 rounded-lg uppercase text-lg transition-colors shadow-lg">
+                    Enquire / Book This Package
+                </a>
+            </div>
+        </div>
+        
+    </div>
+</div>
+<a href="https://wa.me/27782870120" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"
    class="fixed right-6 bottom-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white p-4 rounded-full shadow-lg flex items-center justify-center text-xl">
     <i class="fab fa-whatsapp"></i>
 </a>
 
-  <!-- FOOTER -->
   <footer class="bg-gray-900 text-gray-300 py-6 mt-12">
     <div class="max-w-6xl mx-auto px-4 text-center">
       <p>© <span id="year"></span> BBM-GO Travel. All rights reserved.</p>
@@ -115,6 +164,241 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+    feather.replace(); // Initialize feather icons
+
+    // --- 1. PACKAGE DATA (Simulated API/Database) ---
+    const packageDetails = {
+            clarens: {
+    title: "Clarens: Jewel of the Free State Adventure",
+    price: "R3,600.00",
+    duration: "3 Days / 2 Nights",
+    description: `Nestled in the foothills of the Maluti Mountains and often called the "Jewel of the Free
+State," Clarens is a charming village renowned for its golden sandstone cliffs, vibrant
+arts scene, and wealth of outdoor adventures. Visitors can explore the dramatic
+landscapes of the nearby Golden Gate Highlands National Park through hiking or scenic
+drives, seek adrenaline on white-water rafting trips on the Ash River or zip-lining
+adventures, or enjoy more serene pursuits like hot air ballooning at sunrise, horse riding
+through the mountains, and browsing the many independent art galleries and boutiques
+in the village square. Major attractions include the park's iconic cliffs and wildlife, the
+historical Surrender Hill, the immersive Basotho Cultural Village, and the fascinating
+discovery of dinosaur fossils embedded in the local sandstone. The experience is
+complemented by excellent local cuisine at spots like Clementines Restaurant or The
+Courtyard Bakery, craft beer at the Clarens Brewery, and relaxation at various wellness
+spas. This package focuses on the area's thrilling side, including adrenaline activities and exploring the dramatic landscapes of the nearby Golden Gate Highlands National Park, the Basotho Cultural Village, and the unique local dinosaur fossil sites.`,
+    inclusions: [
+        "2 nights accommodation at a preferred guesthouse or lodge.",
+        "Breakfast for 2 days (Daily breakfast for duration of stay).",
+        "Transport (Local transfers for included activities).",
+        "Activity pass for Clarens Xtreme (for specified activities).",
+        "Zipline adventure session.",
+        "Crafted Beer and Wine Tasting at a local brewery/vintner.",
+        "Paintball session.",
+        "Visit and scenic drive through Golden Gate Highlands National Park.",
+        "Visit to the Kgodumodumo dinosaur center.",
+    ],
+    exclusions: [
+        "Lunch and Dinner meals (allowing flexibility for local cuisine).",
+        "Optional activities like hot air ballooning or white-water rafting.",
+        "Personal shopping and gratuities."
+    ],
+    notes: {
+        deposit: "R1,000.00 per person required to secure the booking.",
+        sharing_rate: "Price is based on per person sharing."
+    }
+},
+
+            
+gariep: {
+    title: "Gariep: Water Sports & Karoo Adventure",
+    price: "R3,600.00",
+    duration: "3 Days / 2 Nights", // Updated to 2 nights based on new inclusions
+    description: `Centered around its monumental namesake—the largest dam in South Africa, spanning
+over 36,000 hectares on the Orange River—Gariep is a young town ideally positioned
+between Johannesburg and Cape Town and serves as a premier destination for
+water-based adventures and serene Karoo landscapes. Visitors are drawn to the vast
+Gariep Dam Nature Reserve, home to South Africa's largest herd of springbok and other
+wildlife like Cape Mountain zebra, for activities ranging from game drives and bird
+watching to hiking and horse riding. The dam itself is a hub for water sports, including
+sailing, powerboating, canoeing, angling, and waterskiing, with organized boat cruises
+offering scenic tours. Other key attractions include fascinating tours of the massive
+dam wall, the family-friendly Aventura (Forever) Resort with amenities from golf to
+tennis, and nearby historical sites like the Norvalspont Concentration Camp Graveyard.
+For more active pursuits, the area offers mountain biking trails, 4x4 routes, and annual
+events like the February Water Sport Festival and Rubber Duck Race, ensuring a
+dynamic mix of relaxation and adventure.`,
+    inclusions: [
+        "2 nights accommodation at a preferred resort.", // Updated duration
+        "Transport (Local transfers for activities).",
+        "Daily Lunch and Dinner.", // Full board minus breakfast on departure
+        "Breakfast for 2 days (Daily breakfast for duration of stay).",
+        "Scenic Boat Cruise on the Gariep Dam.",
+        "Access to Gariep Dam Nature Reserve for game viewing.", // New inclusion based on description
+    ],
+    exclusions: [
+        "Fuel and specialized equipment rental for water sports (e.g., jet skiing).",
+        "Fishing licenses and gear.",
+        "Optional activities like horse riding, mountain biking, or 4x4 routes.",
+        "Travel insurance."
+    ],
+    notes: {
+        deposit: "R800.00 per person required to secure the booking.",
+        sharing_rate: "Price is based on per person sharing."
+    }
+},
+
+parys: {
+    title: "Parys: Vredefort Dome Adventure Hub",
+    price: "R3,550.00",
+    duration: "3 Days / 2 Nights", // Updated to 2 nights based on new inclusions
+    description: `Nestled on the scenic banks of the Vaal River in South Africa's Free State province, the
+charming town of Parys was named in 1876 by a German surveyor who was reminded
+of Paris, France, by its river setting. Today, it serves as a gateway to adventure and
+relaxation, offering visitors a vibrant mix of adrenaline-pumping activities like
+white-water rafting, abseiling, skydiving over the meteorite crater, and 4x4 trails,
+alongside more leisurely pursuits such as exploring art galleries, antique shops, and the
+nostalgic Candy Shop filled with retro sweets. The town's major attractions are equally
+diverse, anchored by the surrounding Vredefort Dome—a UNESCO World Heritage Site
+representing the world's oldest and largest meteorite impact crater. This package is an adventure hub, offering a blend of adrenaline sports and nature exploration within this geologically unique region. Activities include nature hiking, mountain biking, quad biking, and paintball.`, 
+    inclusions: [
+        "2 nights Accommodation.", // Updated duration
+        "Transport (Local transfers for included activities).",
+        "Guided Hiking excursion.",
+        "Access to Swimming facilities.",
+        "Organized Birdwatching activity.",
+        "Mountain Biking trail access.",
+        "Paintball session.",
+        "Game Drive (at a local conservancy).",
+        "Quad Biking session.",
+        "Archery session.",
+        "Breakfasts and Dinners (Full board arrangement will depend on chosen lodge)." // Added meal note for clarity
+    ],
+    exclusions: [
+        "White-water rafting or abseiling (available as optional extras).", // Moved major activities to exclusions/options
+        "Exploring art galleries, antique shops, and the nostalgic Candy Shop.",
+        "Gratuities and personal shopping."
+    ],
+    notes: {
+        deposit: "R800.00 per person required to secure the booking.",
+        sharing_rate: "Price is based on per person sharing."
+    }
+},
+bloemfontein: {
+    title: "Bloemfontein: City of Roses & Imvelo Safari Adventure",
+    price: "R1,350.00",
+    duration: "3 Days / 2 Nights",
+    description: `Known as the "City of Roses" for its abundance of these flowers and the annual rose
+festival it hosts, Bloemfontein serves as South Africa's judicial capital and the provincial
+heart of the Free State, situated on a high plateau at 1,395 meters above sea level.
+Tourists can experience one of the city's most unique features at the Naval Hill Nature
+Reserve and the Franklin Game Reserve, where wildlife like giraffe, zebra, and springbok
+roam on a hill within the city limits, or explore its rich cultural heritage at institutions like
+the Oliewenhuis Art Museum, the National Museum, and the Anglo-Boer War Museum.
+Other major attractions include the beautiful Free State National Botanical Garden, the
+Loch Logan Waterfront for shopping and dining, wildlife interactions at the Bagamoya
+Estate, and significant landmarks like the National Women's Monument and the
+towering Nelson Mandela statue on Naval Hill.`,
+    inclusions: [
+        "2 nights accommodation at Imvelo Safari Lodge.",
+        "Transport (Local transfers for activities and city sights).",
+        "Daily Breakfast.",
+        "Daily Lunch & Dinner (Full Board).",
+        "Paintball session.",
+        "One afternoon Game Drive.",
+        "Quad Biking session.",
+        "Welcoming Drinks upon arrival.",
+        "Visit to Naval Hill Nature Reserve and/or National Museum."
+    ],
+    exclusions: [
+        "Lunches on arrival/departure day.",
+        "Alcoholic beverages outside of welcoming drinks.",
+        "Curio shop purchases and personal expenses."
+    ],
+    notes: {
+        deposit: "R800.00 per person required to secure the booking.",
+        sharing_rate: "Price is based on per person sharing."
+    }
+}
+        };
+
+    // --- 2. MODAL LOGIC ---
+    const modal = document.getElementById('package-modal');
+    const closeModalBtn = document.getElementById('close-modal-btn');
+    const viewDetailsButtons = document.querySelectorAll('.view-details-btn');
+
+    const modalTitle = document.getElementById('modal-title');
+    const modalPrice = document.getElementById('modal-price');
+    const modalDuration = document.getElementById('modal-duration');
+    const modalDescription = document.getElementById('modal-description');
+    const modalInclusions = document.getElementById('modal-inclusions');
+    const modalExclusions = document.getElementById('modal-exclusions');
+    const modalContent = modal.querySelector('.modal-content');
+
+    const openModal = (packageId) => {
+        const data = packageDetails[packageId];
+        if (!data) return;
+
+        // 1. Populate Modal Content
+        modalTitle.textContent = data.title;
+        modalPrice.textContent = `R${data.price} pp`;
+        modalDuration.textContent = data.duration;
+        modalDescription.textContent = data.description;
+        
+        // Function to generate list items
+        const populateList = (ulElement, items, isExclusion = false) => {
+            ulElement.innerHTML = ''; // Clear previous content
+            items.forEach(item => {
+                const li = document.createElement('li');
+                li.className = 'flex items-start';
+                // Using Feather icons (since they were imported and initialized)
+                const icon = isExclusion 
+                    ? '<i data-feather="x-circle" class="w-5 h-5 mr-3 flex-shrink-0 mt-1 text-red-500"></i>'
+                    : '<i data-feather="check-circle" class="w-5 h-5 mr-3 flex-shrink-0 mt-1 text-green-600"></i>';
+                
+                li.innerHTML = `${icon} <span>${item}</span>`;
+                ulElement.appendChild(li);
+            });
+            feather.replace(); // Re-render icons after adding content
+        };
+
+        populateList(modalInclusions, data.inclusions, false);
+        populateList(modalExclusions, data.exclusions, true);
+
+        // 2. Show Modal
+        modal.classList.remove('opacity-0', 'pointer-events-none');
+        modalContent.classList.remove('scale-95');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling on the body
+    };
+
+    const closeModal = () => {
+        // 1. Hide Modal
+        modal.classList.add('opacity-0', 'pointer-events-none');
+        modalContent.classList.add('scale-95');
+        document.body.style.overflow = ''; // Re-enable scrolling on the body
+    };
+
+    // Event Listeners
+    viewDetailsButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const packageId = button.getAttribute('data-package-id');
+            openModal(packageId);
+        });
+    });
+
+    closeModalBtn.addEventListener('click', closeModal);
+
+    // Close modal when clicking outside (on the backdrop)
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+
+    // Close modal when pressing the ESC key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !modal.classList.contains('opacity-0')) {
+            closeModal();
+        }
+    });
   </script>
 
 </body>
